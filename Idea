@@ -1,0 +1,33 @@
+1. you open up chrome 
+2. open notepad 
+$BaseBet = {"insert bet here"}
+$MininumBalanance = {"insert min here"}
+$MaxBet = {"insert Maxbet here"}
+3. then You start bot
+4  Bot rights on url block and inputs (csgodouble.com)
+5. Bot click to muinumis chat 
+6. Bot opens inspect element (ctrl shift I)
+7. then looks for "balance"
+8. double clicks on number copy then set CurrentBalance (CurrentBalance = Clipget())
+9. focus on notpad double click on $MininumBet and copy 
+Const $MininumBalanance = clipget()
+10. then start function
+
+Func
+ if $MininumBalanance < $CurrentBalance then stop
+  if $nextAnswerListItemPos < $nextQuestionStemPos then stop
+  MouseMove(x, y) 
+  ;to ispect element agien
+  send (""
+endFunc
+ 
+ all varibles and Const
+ 
+ Local $CurrentBalance = Clipget()
+ 
+ 
+ 
+ Const $BaseBet = clipget()
+ Const $MininumBalanance = clipget()
+ Const $MaxBet = clipget()
+
