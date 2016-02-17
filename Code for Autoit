@@ -3,6 +3,11 @@
  global $Stop = 0
  
  HotKeySet ( "\" [, "$Stop = 1"] )
+ HotKeySet ( "+" [, "$binFlag = True"] )
+ 
+ Run("C:\Program Files\Google\Chrome\Application\chrome.exe", "C:\Program Files\Google\Chrome\Application")
+WinWait("New Tab - Google Chrome", "")
+WinSetState ("New Tab - Google Chrome", "", @SW_MINIMIZE)
 
 WinActive ( "google chrome" )
 ; Now it time to go to Csgodouble Put the cords for the url bar
@@ -21,6 +26,33 @@ WinActive ( "google chrome" )
    send ("c")
    send ("o")
    send ("m")
+   
+   ;Now its time to open note pad
+   Run("notepad")
+WinWaitActive("Untitled - Notepad")
+ClipPut("This is where your vaules for betting go.")
+Send("^v")
+Send ("{ENTER}")
+Send ("{ENTER}")
+ClipPut("$BaseBet = ")
+Send("^v")
+Send ("{ENTER}")
+ClipPut("$MininumBalanance = ")
+Send("^v")
+Send ("{ENTER}")
+ClipPut("$MaxBet = DON't LEAVE THIS BLANK OR BOT WON'T WORK")
+Send("^v")
+Send ("{ENTER}")
+Send("Press + to continue" & @LF)
+Do
+    Sleep(100)
+Until $binFlag = True
+Send("You pressed +.")
+
+Func _Continue()
+    $binFlag = Not $binFlag
+EndFunc
+
    
   ; now it is time to set the const
   WinActive ( "Notepad" )
@@ -105,6 +137,21 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 12 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 13 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 14 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       ;time to wait until bet is overwith 
+         send ("^I")
+          send ("^I")
+         send ("^f")
+         send ("m")
+         send ("y")
+         send ("t")
+         send ("o")
+         send ("t")
+         send ("a")
+         send ("l")
+         MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+         MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+         send (^c)
+         
         ;now reload balance
         MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
         ; update 
@@ -124,8 +171,8 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
              CurrentBalance = Clipget()
 endFuncs
 
-Do
+While $Stop = 0
 Call ( "Betting" )
-until $Stop = 1
+Wend
 
 exit
