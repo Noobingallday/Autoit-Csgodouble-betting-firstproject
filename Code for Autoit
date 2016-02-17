@@ -1,7 +1,8 @@
  global $CurrentBalance = 0
  global $CurrentBet = 0
+ global $Stop = 0
  
- 
+ HotKeySet ( "\" [, "$Stop = 1"] )
 
 WinActive ( "google chrome" )
 ; Now it time to go to Csgodouble Put the cords for the url bar
@@ -21,7 +22,7 @@ WinActive ( "google chrome" )
    send ("o")
    send ("m")
    
-  ; no it is time to set the const
+  ; now it is time to set the const
   WinActive ( "Notepad" )
    MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
    MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
@@ -100,3 +101,8 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
              CurrentBalance = Clipget()
 endFuncs
 
+Do
+Call ( "Betting" )
+until $Stop = 1
+
+exit
