@@ -1,0 +1,38 @@
+ Local $CurrentBalance = 0
+ local $CurrentBet = 0
+ 
+ 
+
+WinActive ( "google chrome" )
+; Now it time to go to Csgodouble Put the cords for the url bar
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   send ("c")
+   send ("s")
+   send ("g")
+   send ("o")
+   send ("d")
+   send ("o")
+   send ("u")
+   send ("b")
+   send ("l")
+   send ("e")
+   send (".")
+   send ("c")
+   send ("o")
+   send ("m")
+   
+  ; no it is time to set the const
+  WinActive ( "Notepad" )
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   send ("^c")
+ Const $BaseBet = clipget()
+    MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   send ("^c")
+ Const $MininumBalanance = clipget()
+    MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   send ("^c")
+ Const $MaxBet = clipget()
+
