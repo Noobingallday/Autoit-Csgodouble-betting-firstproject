@@ -60,7 +60,8 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
         ;now reload balance
         MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
         ; update 
-
+          send ("^I")
+           send ("^I")
 endFunc
  
  all varibles and Const
