@@ -1,5 +1,5 @@
- Local $CurrentBalance = 0
- local $CurrentBet = 0
+ global $CurrentBalance = 0
+ global $CurrentBet = 0
  
  
 
@@ -35,4 +35,68 @@ WinActive ( "google chrome" )
    MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
    send ("^c")
  Const $MaxBet = clipget()
+ 
+ ;Now it time for the function
+ Func Betting
+ if $MininumBalanance < $CurrentBalance then exit
+  if $MaxBet < $nextQuestionStemPos then exit
+MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+;to ispect element agien
+  send ("^I")
+    send ("^I")
+  send ("^f")
+  send ("b")
+  send ("a")
+  send ("l")
+  send ("l")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+  send ("{ENTER}")
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+   Sleep 1000
+     MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+     MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       Send ("^c")
+       ; check what won
+       if getclip() = 0 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 1 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 2 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 3 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 4 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 5 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 6 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 7 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 8 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) 
+       if getclip() = 9 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 10 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 11 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 12 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 13 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       if getclip() = 14 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+        ;now reload balance
+        MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+        ; update 
+          send ("^I")
+           send ("^I")
+           send ("^f")
+           send ("b")
+           send ("a")
+           send ("l")
+           send ("a")
+           send ("n")
+           send ("c")
+           send ("e")
+             MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+             MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+             send (^c)
+             CurrentBalance = Clipget()
+endFuncs
 
