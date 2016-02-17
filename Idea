@@ -14,8 +14,8 @@ Const $MininumBalanance = clipget()
 10. then start function
 
 Func Betting
- if $MininumBalanance < $CurrentBalance then stop
-  if $MaxBet < $nextQuestionStemPos then stop
+ if $MininumBalanance < $CurrentBalance then exit
+  if $MaxBet < $nextQuestionStemPos then exit
 MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
 ;to ispect element agien
   send ("^I")
