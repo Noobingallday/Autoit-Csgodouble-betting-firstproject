@@ -37,6 +37,26 @@ WinActive ( "google chrome" )
    send ("^c")
  Const $MaxBet = clipget()
  
+ ;now reopen google chrome and close the chat
+WinActive ( "google chrome" )
+
+MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+ 
+        send ("^I")
+           send ("^I")
+           send ("^f")
+           send ("b")
+           send ("a")
+           send ("l")
+           send ("a")
+           send ("n")
+           send ("c")
+           send ("e")
+             MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+             MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+             send (^c)
+             CurrentBalance = Clipget()
+ 
  ;Now it time for the function
  Func Betting
  if $MininumBalanance < $CurrentBalance then exit
@@ -67,7 +87,9 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
      MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        Send ("^c")
        ; check what won
+       ;clicks times 2
        if getclip() = 0 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
+       ;clicks clear then +10
        if getclip() = 1 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 2 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 3 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
@@ -75,7 +97,8 @@ MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 5 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 6 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 7 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
-       if getclip() = 8 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] ) 
+       ;clicks times 2
+       if getclip() = 8 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 9 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 10 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
        if getclip() = 11 then  MouseClick ( "button" [, x, y [, clicks = 1 [, speed = 10]]] )
